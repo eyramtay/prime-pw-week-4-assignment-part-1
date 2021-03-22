@@ -14,55 +14,76 @@ console.log('Test - should say "Hello World!"', hello());
 
 // 2. Function to return an personalized hello, for example 'Hello, Jo!'
 function helloName( name ) {
-  return;
+  return 'Hello ' + name + ', how\'s it going?';
 }
 // Remember to call the function to test
-
+console.log(helloName('Prime Student'));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
+function addNumbers( firstNumber, secondNumber ) {
   // return firstNumber + secondNumber;
+  return firstNumber + secondNumber;
 }
+console.log(addNumbers(5, 5));
 
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multiplyThree(num1, num2, num3 ){
+  return num1 * num2 * num3;
 }
+console.log(multiplyThree(5,10,10));
 
 
-// 5. Function that will return true if a number is positive, 
+// 5. Function that will return true if a number is positive,
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
+  } else {
+    return false;
   }
-    return;
 }
-// Call the function to test each outcome (true & false) 
+// Call the function to test each outcome (true & false)
 // Write a separate console.log statement for each outcome
 console.log( 'isPositive - should say true', isPositive(3) );
 console.log( 'isPositive - should say false', isPositive(0) );
 console.log( 'isPositive - should say false', isPositive(-3) );
 
 
-// 6. Function to return the _last_ item in an array. If the 
+// 6. Function to return the _last_ item in an array. If the
 //    array is empty, return `undefined`.
 function getLast( array ) {
-
+  if (array.length === 0) {
+    return 'undefined';
+  }
+  return array[array.length - 1];
 }
+console.log('Test - should return the number "2": ', getLast([1,2,3,4,5,5,4,3,2]));
+console.log('Testing empty array - should say undefined: ', getLast([]));
 
-// 7. Function to find a value in an array. Return true if the 
+// 7. Function to find a value in an array. Return true if the
 //    value is found and false otherwise. Use a loop;
-//    DO NOT use Array.includes, Array.indexOf, or Array.find 
-function find( value, array ){
-  
+//    DO NOT use Array.includes, Array.indexOf, or Array.find
+
+function find( value, array ) {
+ for(let i=0; i<array.length; i++) {
+   console.log(array);
+   if (value == array[i]) {
+    return true;
+  } else {
+    return false;
+  }
+ }
 }
+console.log('Test - should return "true": ', find(3, [1,2,3,4]));
+console.log('Test - should return "false": ', find(6, [1,2,3,4,5]));
+// console.log(array[i]);
+
 
 // ----------------------
 // Stretch Goals
 // ----------------------
-// 8. Function to check if a letter is the first letter in a 
+// 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
 
@@ -71,11 +92,15 @@ console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
+function sumAll(arr) {
   let sum = 0
   // TODO: loop to add items
+  for(let i = 0; i < arr.length; i++) {
+    sum = sum+arr[i];
+  }
   return sum;
 }
+console.log('Testing - sum of the array should equal 25: ', sumAll([5,10,10]));
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
@@ -83,6 +108,6 @@ function sumAll( ) {
 
 
 
-// 11. Pick a problem from Edabit(https://edabit.com/) or 
-//     CodeWars(https://www.codewars.com/). Then describe it 
+// 11. Pick a problem from Edabit(https://edabit.com/) or
+//     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
